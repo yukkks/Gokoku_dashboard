@@ -1,4 +1,5 @@
 import dash
+import os
 from dash import dcc, html, Input, Output
 import pandas as pd
 import requests
@@ -161,4 +162,5 @@ def update_graphs(search_value):
 
 # **Run App**
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    port = int(os.environ.get("PORT", 8080))  # Default to port 8080 if PORT is not set
+    app.run_server(debug=True, host="0.0.0.0", port=port)
