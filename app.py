@@ -86,7 +86,7 @@ if df.empty:
 
 # **Initialize Dash App**
 app = dash.Dash(__name__)
-
+server = app.server 
 # **📌 Power BI-Style Layout (UI-Only Changes)**
 app.layout = html.Div(style={
     "backgroundColor": "#000000",  # Full dark background
